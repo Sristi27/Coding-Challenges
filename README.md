@@ -1,2 +1,2 @@
 # coding
-competitive coding solutions
+Hackerearth Challenge
