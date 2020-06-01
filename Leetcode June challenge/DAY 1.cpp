@@ -1,4 +1,5 @@
-Question: ##INVERT A BINARY TREE
+Question: INVERT A BINARY TREE
+
 //CPP solution
 
 class Solution {
