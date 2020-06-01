@@ -1,4 +1,4 @@
-This repository consists of my solutions to the various coding challenges of Hackerearth and Leetcode
+###This repository consists of my solutions to the various coding challenges of Hackerearth and Leetcode in Python and C++.
 
 <h1>Leetcode</h1>
 
