@@ -9,7 +9,7 @@ public:
        ListNode*temp=node->next;
         node->val=temp->val;
         node->next=temp->next;
-        //e(temp);
+        //free(temp);
     }
 };
   
