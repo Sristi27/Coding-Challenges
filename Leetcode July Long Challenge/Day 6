@@ -1,0 +1,95 @@
+Given a non-empty array of digits representing a non-negative integer, increment one to the integer.
+
+The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.
+
+You may assume the integer does not contain any leading zero, except the number 0 itself.
+
+Example 1:
+
+Input: [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Example 2:
+
+Input: [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+
+
+C++	Solution
+
+1 class Solution {
+2 public:
+3
+    vector<int> plusOne(vector<int>& digits) {
+4
+        int n=digits.size();
+5
+        if (n==1){
+6
+            digits[0]+=1;
+7
+            while (digits[0]>=9){ //999
+8                 //10  //1000
+10
+                int temp=digits[0]%10; //0 //0
+11
+                digits.insert(digits.begin(),digits[0]/10);// 1 10 //100
+12
+                digits[1]=temp; // 1 0 //100 0
+13
+            }
+14
+            
+15
+            return digits;
+16
+        }
+17
+        vector<int>result;
+18
+        digits[n-1]+=1;
+19
+        int j=n-1;
+20
+        while(j>0){
+21
+            
+22
+            if(digits[j]>=10){
+23
+                int temp=digits[j]%10;
+24
+                digits[j-1]+=digits[j]/10;
+25
+                digits[j]=temp;
+26
+                
+27
+            }
+28
+            j--;
+29
+        }
+30
+        while(j==0 and digits[j]>9){
+31
+            int temp=digits[j]%10;
+32
+            digits.insert(digits.begin(),digits[j]/10);
+33
+            digits[1]=temp;
+34
+        }
+35
+        
+36
+        return digits;
+37
+        
+38
+        
+39
+    }
+40
+};
