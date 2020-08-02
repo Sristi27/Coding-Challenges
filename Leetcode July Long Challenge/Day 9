@@ -1,0 +1,142 @@
+Given a binary tree, write a function to get the maximum width of the given tree. The maximum width of a tree is the maximum width among all levels.
+
+The width of one level is defined as the length between the end-nodes (the leftmost and right most non-null nodes in the level, where the null nodes between the end-nodes are also counted into the length calculation.
+
+It is guaranteed that the answer will in the range of 32-bit signed integer.
+
+Example 1:
+
+Input: 
+
+           1
+         /   \
+        3     2
+       / \     \  
+      5   3     9 
+
+Output: 4
+Explanation: The maximum width existing in the third level with the length 4 (5,3,null,9).
+Example 2:
+
+Input: 
+
+          1
+         /  
+        3    
+       / \       
+      5   3     
+
+Output: 2
+Explanation: The maximum width existing in the third level with the length 2 (5,3).
+Example 3:
+
+Input: 
+
+          1
+         / \
+        3   2 
+       /        
+      5      
+
+Output: 2
+Explanation: The maximum width existing in the second level with the length 2 (3,2).
+Example 4:
+
+Input: 
+
+          1
+         / \
+        3   2
+       /     \  
+      5       9 
+     /         \
+    6           7
+Output: 8
+Explanation:The maximum width existing in the fourth level with the length 8 (6,null,null,null,null,null,null,7).
+ 
+
+Constraints:
+
+The given binary tree will have between 1 and 3000 nodes.
+C++	
+1
+/**
+2
+ * Definition for a binary tree node.
+3
+ * struct TreeNode {
+4
+ *     int val;
+5
+ *     TreeNode *left;
+6
+ *     TreeNode *right;
+7
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+8
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+9
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+10
+ * };
+11
+ */
+12
+class Solution {
+13
+public:
+14
+    int widthOfBinaryTree(TreeNode* root) {
+15
+        
+16
+        if(!root) return 0;
+17
+        queue<pair<TreeNode*,int>>q;
+18
+        q.push({root,0});
+19
+        int width=1;
+20
+        while(!q.empty()){
+21
+            
+22
+            int c=q.size();
+23
+            int s=q.front().second;
+24
+            int e=q.back().second;
+25
+            width=max(width,e-s+1);
+26
+            for(int i=0;i<c;i++){
+27
+                pair<TreeNode*,int>p=q.front();
+28
+                q.pop();
+29
+                int idx=p.second-s;
+30
+                if(p.first->left){
+31
+                    q.push({p.first->left,2*idx+1});
+32
+                }
+33
+                if(p.first->right)
+34
+                    q.push({p.first->right,2*idx+2});
+35
+37
+            }
+38
+        }
+39
+        
+40
+        return width;
+41
+    }
+42
+};
