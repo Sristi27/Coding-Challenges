@@ -1,0 +1,42 @@
+Subsets
+
+Solution
+Given a set of distinct integers, nums, return all possible subsets (the power set).
+
+Note: The solution set must not contain duplicate subsets.
+
+Example:
+
+Input: nums = [1,2,3]
+Output:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+Python3	
+1
+import itertools
+2
+class Solution:
+3
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+4
+        l=[]
+5
+        for i in range(len(nums)+1):
+6
+            l.append(list(itertools.combinations(nums,i)))
+7
+        print(l)
+8
+        
+9
+            
+10
+            
