@@ -2,6 +2,10 @@
 
 <h1>Leetcode</h1>
 
+
+<h3>January Leet Coding Challenge</h3>
+https://leetcode.com/explore/challenge/card/january-leetcoding-challenge-2021/579/week-1-january-1st-january-7th/
+
 <h3>June LeetCoding Challenge</h3>
 https://leetcode.com/explore/featured/card/june-leetcoding-challenge/
 
