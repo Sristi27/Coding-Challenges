@@ -9,7 +9,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 Example 1:
 
-<img src="">
+<img src="https://github.com/Sristi27/Coding-Challenges/blob/master/LeetCode%20May21%20challenge/Screenshot%202021-05-08%20at%2012.25.29%20PM.png">
 
 
 Input: head = [-10,-3,0,5,9]
